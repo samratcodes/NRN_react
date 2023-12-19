@@ -1,0 +1,18 @@
+.recommended_product{
+    display: flex;
+    flex-direction: column;
+}
+.recommended_text{
+   font-weight: 800; 
+    color: rgb(8, 63, 99);
+font-size: 2rem;
+}
+.Products{
+    width: 85rem;
+}
+.productComponent{
+    padding-top:1rem ;
+    background-color: rgb(245,244,244);
+    display: flex;
+   justify-content: center;
+}

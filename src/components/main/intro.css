@@ -1,0 +1,75 @@
+.Advertisement_Section{
+    overflow: hidden;
+   height: 40rem;
+   width: 100%;  
+   display: flex;
+   align-items:center;
+   justify-content: flex-start;
+}
+.Advertisement_Section img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* .Advertisement_Section{
+    display: flex;
+     width: 75rem;
+     justify-content: space-around;
+ } */
+ /* .AS_left{
+     display: flex;
+     flex-direction: column;
+   
+    align-items: center;
+     width: 600rem;
+     background: url("https://beta.nrnakr.org/frontend/images/donor_image.png");
+     height: 50rem;
+ }
+ .ASL_text1{
+     border-radius: 2rem;
+     padding: 1rem;
+     height: max-content;
+  font-size:4rem;
+     font-weight: 600;
+     color: white;
+     margin-top: 2.5rem;
+     background-color: rgb(32,34,91);
+   
+ }
+ .ASL_text2{
+     border-radius: 2rem;
+     padding: 1rem;
+     height: max-content;
+  font-size:2rem;
+     font-weight: 600;
+     color:rgb(177,203,255);
+     margin-top: 2rem;
+     background-color:white;
+   
+ }
+
+
+ .section1{
+     background-color: rgb(14, 34, 49);
+   
+ }
+ .helpdesk ,.coviddesk{
+     border-radius:2rem;
+     margin-top: 1rem;
+     width: 15rem;
+     height: 9rem;
+     background-color:rgb(219,239,234);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .coviddesk{
+     background-color:rgb(21, 18, 40);
+     color: white;
+ }
+ .helpdesk_top{
+     font-size: 1.5rem;
+     font-weight: 500;
+ } */

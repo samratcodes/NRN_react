@@ -1,0 +1,24 @@
+
+.leaflet-container{
+  position: static;
+}
+   .map{
+    padding: static;
+    background-color:rgb(0,133,223);
+     display: flex;
+     align-items: end;
+     justify-content: center;
+ }
+ .map_section{
+     height: 25rem;
+     width: 100%;
+   background-color:rgb(0,133,223);
+     
+ }
+   #map {
+             height: 100%;
+             width: 100%;
+             position: absolute;
+             top: 0;
+             left: 0;
+         }

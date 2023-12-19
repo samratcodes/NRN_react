@@ -1,0 +1,8 @@
+.Product_top{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    height: 24rem;
+    width:90%;
+    padding: 1rem;
+}

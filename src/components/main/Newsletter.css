@@ -1,0 +1,49 @@
+.newsletter{
+    width: 75rem;
+    height: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section5{
+    margin-top:1rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(242,250,255);
+}
+.newsletter{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.nlt_title{
+    font-size: 2rem;
+    font-weight: 600;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+input[type='text']{
+    width: 10rem;
+}
+input[type='email']{
+    width: 20rem;
+}
+
+input{
+    border: 1px solid rgb(236, 236, 236);
+    font-size: 1.2rem;
+    font-weight: 600;
+        padding: 0.5rem; 
+        margin: 0.2rem;
+}
+
+input[type='submit']{
+    background-color: rgb(69,173,214);
+    color: white;
+    border-radius: 1rem;
+}

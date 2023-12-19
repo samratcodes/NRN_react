@@ -1,0 +1,16 @@
+.PT_middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 30rem;
+}
+.PTM_titletext{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.buy_now{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

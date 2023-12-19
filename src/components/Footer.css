@@ -1,0 +1,38 @@
+
+footer{
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(0,133,223);
+   color: white;
+}
+.footer_top{
+  
+   width: 80rem;
+   height: 15rem;
+   display: flex;
+   justify-content: space-between;
+
+}
+.ft_details ,.ft_About{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+.ft_details img{
+width: 30rem;
+}
+.socials i{
+   color: rgb(255, 255, 255);
+   background-color: rgb(54, 54, 54);
+}
+.socials{
+   display: flex;
+   justify-content: space-around;
+   width: 10rem;
+}
+.fta_title{
+   font-size: 1.5rem;
+   font-weight: 600;
+}
