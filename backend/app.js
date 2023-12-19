@@ -76,24 +76,21 @@ app.post("/image",upload.single("image"),(req,res)=>{
     }) 
 })
 
-
-
 app.use((req,res)=>{
     res.status(404).send("This is 404 Error.")
 })
 
-const connectionString = process.env.MONGO_BASE_URI + process.env.DATABASE
+
+const connectionString = `mongodb+srv://nrnDb:${process.env.DB_PASSWORD}@cluster0.ou1m2s6.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(connectionString)
 .then(()=>{
-    console.log("Database connection successful")
+    console.log("connected to database successfully")
     app.listen(port,()=>{
-        console.log("server started on port : ",port)
+        console.log("Successfully started server on port : ",port)
     })
 })
 .catch((err)=>{
-    console.error(err.message)
+    console.log("err")
 })
-
-
 
 
