@@ -1,0 +1,77 @@
+.ContentForm{
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}.CF_title{
+    font-size: 4rem;    
+    color: white;
+    margin: 2rem 0rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;  
+}
+.CF_input_element{
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+label{
+    font-size: 1rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;  
+}
+#ContentName,#ContentLink,#Heading,#SubHeading,#shortDescription,#LongDescription,#PageLocation{
+    border-radius: 1rem;
+    width: 20rem;
+}
+#shortDescription{
+    height: 5rem;
+    width: 30rem;
+}
+#LongDescription{
+    height: 10rem;
+    width: 30rem;
+}
+.topSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.ContentSection{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid white;
+}.imageSection{
+display: flex;
+flex-direction: column;
+}
+.CF_submit{
+    width: 20rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    border-top: 1px solid white;
+    padding: 0.5rem 2rem;
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0,133,223);
+    cursor: pointer;
+}
+.CF_form{
+    width: 80%;
+    padding: 3rem 0rem;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+    border: white 1px solid;
+}
+
