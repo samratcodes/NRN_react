@@ -4,10 +4,10 @@ const multer = require("multer")
 const mongoose = require("mongoose")
 const Menu = require("./models/menu")
 const Member = require("./models/member")
-
+const cors = require('cors');
 const app = express()
 const port = process.env.PORT 
-
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
