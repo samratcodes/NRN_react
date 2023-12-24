@@ -1,0 +1,59 @@
+.loginsection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    background-size:contain;
+}
+.login{
+    width: 80%;
+    padding: 3rem 0rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+.loginform{
+    height: 35rem;
+    border-radius: 2rem;
+    background-color:rgb(0,133,223) ;
+    border: 5px solid rgb(255, 255, 255); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30rem;
+    padding: 3rem 0rem;
+    overflow: hidden;
+}
+.ltitle{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}.loginform
+input[type='text'],
+.loginform
+input[type='password'] {
+    width: 20rem;
+    border-radius: 2rem;
+    
+    border: 2px solid #ffffff;
+}
+
+.loginform input[type='text']:focus,
+.loginform input[type='password']:focus {
+    outline: none;
+    border: 2px solid rgb(69,173,214);
+}
+.btnlogin,.cancelbtn{
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 2rem;
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0,133,223);
+    cursor: pointer;
+}

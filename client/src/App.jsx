@@ -13,22 +13,43 @@ import Main from "./components/main/Main";
 import Subpage from "./Subpage/Subpage";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
 import ProductPage from "./components/Ecommerce/Productpage/productPage";
-import Map from "../src/components/Map"
+import Map from "../src/components/Map";
+import Login from "./components/login/Login";
 let body = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
+    element: <Login/>,
+  },
+  {
+    path: "/home",
     element: <Main/>,
   },
   {
-    path: "/Subpage",
+    path: "/about-us",
     element: <Subpage/>,
   },
   {
-    path: "/ExecutiveBoards",
+    path: "/women-affairs",
+    element: <Subpage/>,
+  },
+  {
+    path: "/youth-affairs",
+    element: <Subpage/>,
+  },
+  {
+    path: "/objectives-goals",
+    element: <Subpage/>,
+  },
+  {
+    path: "/executive-boards",
     element: <ExecutiveBoards/>,
   },
   {
-    path: "/Advisors",
+    path: "/members",
+    element: <ExecutiveBoards/>,
+  },
+  {
+    path: "/advisors",
     element: <Advisors/>,
   },
   {
@@ -42,11 +63,16 @@ let body = createBrowserRouter([
   {
     path: "/oneProduct",
     element: <ProductPage/>,
-  }
-  
+  },
+  {
+    path: "*", // Match any unknown path
+    element: <Main />,
+  },
 ]);
 
+
 const App = () => {
+  
   return (
     <div>  
 <Header/>

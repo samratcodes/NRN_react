@@ -1,0 +1,47 @@
+.EBA_title{
+    font-size: 2rem;
+    color:rgb(0,133,223) ;
+}
+
+.addMembers {
+    cursor: pointer;
+  }
+  
+  .fa-plus,
+  .fa-minus {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #ffffff;
+  }
+  
+  .activemem {
+    display: none;
+  }
+  
+  .EBA_title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .visible {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  .EBA_button{
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:white;
+    background-color:rgb(69,173,214) ;
+    width: 10rem;
+    height: 2rem;
+     font-weight: 400;
+  }
