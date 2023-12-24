@@ -15,7 +15,12 @@ import Ecommerce from "./components/Ecommerce/Ecommerce";
 import ProductPage from "./components/Ecommerce/Productpage/productPage";
 import Map from "../src/components/Map";
 import Login from "./components/login/Login";
+import ContentForm from "./components/ContentForm/ContentForm";
 let body = createBrowserRouter([
+  {
+    path: "/content",
+    element: <ContentForm/>,
+  },
   {
     path: "/login",
     element: <Login/>,
