@@ -57,23 +57,65 @@ app.get("/api/v1/members", async (req,res)=>{
     })
 })
 
-app.post("/members",(req,res)=>{
-    const {name,email,position} = req.body 
-    res.json({name,email,position})
-    console.log({name,email,position})
-})
+app.post("/api/v1/add_menu",upload.fields([{name:"mainMenuImages"},{name:"subMenuImages"}]),(req,res)=>{  
+    const images = req.files["mainMenuImages"] || []
+    const imagePath = images.map((image)=>{return image.path})
+    const imageName = images.map((image)=>{return image.filename})
 
-app.post("/image",upload.single("image"),(req,res)=>{
-    //res.send("checking if route is working")
-    const name = req.file.filename
-    const path = req.file.path
-    const description = req.body.description 
-    console.log({
-        name,path,description
-    })
+    const subImages = req.files["subMenuImages"] || []
+    const subImagePath = subImages.map((image)=>{return image.path})
+    const subImageName = subImages.map((image)=>{return image.filename})
+    
+    const menuData = {
+        name:"Home",
+        link: "/home",
+        content: {
+            heading:"Home",
+            subHeading:"This is home us page",
+            shortDescription:"Various things related to the page are added in the about us page",
+            longDescription:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur ab nam similique? Ab at dignissimos aut dolor fugiat exercitationem tempora, earum pariatur asperiores culpa. Commodi excepturi tempore labore perspiciatis!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus adipisci ducimus corporis iure! Totam quasi earum aliquam ullam ea reprehenderit consequuntur consectetur beatae magnam at. Dolorem nulla repellendus possimus! Esse.`,
+            pageLocation:"A",
+            imagePath:subImagePath,
+            imageName:subImageName,
+        },
+        subMenu:[
+            {
+                heading:"Home",
+                subHeading:"This is home us page",
+                shortDescription:"Various things related to the page are added in the about us page",
+                longDescription:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur ab nam similique? Ab at dignissimos aut dolor fugiat exercitationem tempora, earum pariatur asperiores culpa. Commodi excepturi tempore labore perspiciatis!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus adipisci ducimus corporis iure! Totam quasi earum aliquam ullam ea reprehenderit consequuntur consectetur beatae magnam at. Dolorem nulla repellendus possimus! Esse.`,
+                pageLocation:"A",
+                imagePath:subImagePath,
+                imageName:subImageName,
+            },
+            {
+                heading:"Home",
+                subHeading:"This is home us page",
+                shortDescription:"Various things related to the page are added in the about us page",
+                longDescription:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur ab nam similique? Ab at dignissimos aut dolor fugiat exercitationem tempora, earum pariatur asperiores culpa. Commodi excepturi tempore labore perspiciatis!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus adipisci ducimus corporis iure! Totam quasi earum aliquam ullam ea reprehenderit consequuntur consectetur beatae magnam at. Dolorem nulla repellendus possimus! Esse.`,
+                pageLocation:"A",
+                imagePath:subImagePath,
+                imageName:subImageName,
+            },
+            {
+                heading:"Home",
+                subHeading:"This is home us page",
+                shortDescription:"Various things related to the page are added in the about us page",
+                longDescription:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur ab nam similique? Ab at dignissimos aut dolor fugiat exercitationem tempora, earum pariatur asperiores culpa. Commodi excepturi tempore labore perspiciatis!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus adipisci ducimus corporis iure! Totam quasi earum aliquam ullam ea reprehenderit consequuntur consectetur beatae magnam at. Dolorem nulla repellendus possimus! Esse.`,
+                pageLocation:"A",
+                imagePath:imagePath,
+                imageName:imageName,
+            }
+        ]
+    }
     res.json({
-        name,path,description
-    }) 
+        message:"Add menu link",
+        data:menuData
+    })
 })
 
 app.use((req,res)=>{
@@ -94,3 +136,4 @@ mongoose.connect(connectionString)
 })
 
 
+//http://127.0.0.1:7000/api/v1/members
