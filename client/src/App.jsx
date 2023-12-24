@@ -45,6 +45,10 @@ let body = createBrowserRouter([
     element: <ExecutiveBoards/>,
   },
   {
+    path: "/members",
+    element: <ExecutiveBoards/>,
+  },
+  {
     path: "/advisors",
     element: <Advisors/>,
   },

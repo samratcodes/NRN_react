@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div className='loginsection'>
     <div className='login'>
-      <form >
+      <form className='loginform'>
         <h1 className='ltitle'>Login</h1>
         <input className='inputbox' type="text" placeholder="Enter Username" name="username" required></input>
         <input  type="password" placeholder="Enter Password" name="password" required></input>
