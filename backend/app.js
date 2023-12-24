@@ -1,18 +1,15 @@
 require("dotenv").config()
 const express = require("express")
 const multer = require("multer")
-const cors = require("cors")
 const mongoose = require("mongoose")
 const Menu = require("./models/menu")
 const Member = require("./models/member")
 
 const app = express()
 const port = process.env.PORT 
-app.use(cors());
+
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-
-console.log("print something")
 
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -46,7 +43,7 @@ app.get("/api/v1/menu",async (req,res)=>{
 })
 
 
-app.get("/api/v1/members", async (req,res)=>{
+app.get("/api/v1/members",(req,res)=>{
     Member.find()
     .then((members)=>{
         if(members.length>0){
@@ -54,6 +51,16 @@ app.get("/api/v1/members", async (req,res)=>{
         }else{
             res.status(404).json({success:false,message:"No members found"})
         }
+    })
+    .catch((err)=>{
+        res.status(500).json({success:false,message:"Internal Server Error"})
+    })
+})
+
+app.post("/api/v1/members", (req,res)=>{
+    Member.create(req.body)
+    .then((data)=>{
+        res.status(201).json({success:true,message:"Members added successfully"})
     })
     .catch((err)=>{
         res.status(500).json({success:false,message:"Internal Server Error"})
@@ -101,7 +108,7 @@ app.post("/api/v1/add_menu",upload.fields([{name:"mainMenuImages"},{name:"subMen
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus adipisci ducimus corporis iure! Totam quasi earum aliquam ullam ea reprehenderit consequuntur consectetur beatae magnam at. Dolorem nulla repellendus possimus! Esse.`,
                 pageLocation:"A",
                 imagePath:subImagePath,
-                imageName:subImageName,
+                imageName:subImageName, 
             },
             {
                 heading:"Home",
@@ -125,7 +132,6 @@ app.use((req,res)=>{
     res.status(404).send("This is 404 Error.")
 })
 
-console.log("Again printing osm")
 
 const connectionString = `mongodb+srv://nrnDb:${process.env.DB_PASSWORD}@cluster0.ou1m2s6.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(connectionString)
@@ -136,7 +142,7 @@ mongoose.connect(connectionString)
     })
 })
 .catch((err)=>{
-    console.log(err)
+    console.log("err")
 })
 
 

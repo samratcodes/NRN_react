@@ -60,6 +60,7 @@ const ExecutiveBoardAdd = () => {
         <input
           type="text"
           placeholder="..."
+          name = "name"
           id="name"
           required
           value={formData.name}
@@ -68,7 +69,7 @@ const ExecutiveBoardAdd = () => {
         <label htmlFor="EBA_email">Email:</label>
         <input
           type="email"
-          name="Email"
+          name="email"
           id="email"
           placeholder="..."
           required
@@ -78,6 +79,7 @@ const ExecutiveBoardAdd = () => {
         <label htmlFor="EBA_position">Position:</label>
         <input
           type="text"
+          name="position"
           placeholder="..."
           required
           id="position"
