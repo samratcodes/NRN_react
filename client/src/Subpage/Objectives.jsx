@@ -4,8 +4,7 @@ import { useLocation } from 'react-router-dom';
 const Objectives = () => {
   const location = useLocation();
   const customData = location.state && location.state.customData;
-console.log(location);  
-  console.log(customData);
+
   return (
     <div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExecutiveBoardAdd.css';
 
-const ExecutiveBoardAdd = () => {
+const   ExecutiveBoardAdd = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
@@ -21,31 +21,28 @@ const ExecutiveBoardAdd = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:5173/members', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData),
-})
-
-      .then((response) => {
-        if (!response.ok) {
-          console.log(response);
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log('Data sent to the backend:', data);
-        // You can handle the response here
-      })
-      .catch((error) => {
-        console.error('Error sending data to the backend:', error);
+    try {
+      const response = await fetch('http://localhost:7000/api/v1/members', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        console.error('Error:', response);
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Data sent to the backend:', data);
+    } catch (error) {
+      console.error('Error sending data to the backend:', error);
+    }
   };
 
   return (
@@ -60,7 +57,7 @@ const ExecutiveBoardAdd = () => {
         <input
           type="text"
           placeholder="..."
-          name = "name"
+          name="name"
           id="name"
           required
           value={formData.name}

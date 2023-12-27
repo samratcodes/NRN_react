@@ -3,10 +3,11 @@ import Objectives from './Objectives'
 import Subpagetop from './Subpagetop';
 
 
-const Subpage = () => {
+const Subpage = (props) => {
+  console.log(props.fetchLinkData)
   return (
     <div>
-      <Subpagetop/>
+      <Subpagetop text={props.fetchLinkData}/>
      <Objectives/>
     </div>
   )

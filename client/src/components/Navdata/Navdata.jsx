@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navdata.css';
 
-const Navdata = () => {
+const Navdata = ({ onLinkClick }) => {
   const [ram, setRam] = useState([]);
+console.log(ram)
+  const handleLinkClick = (link) => {
+    onLinkClick(link);
+  };
 
   useEffect(() => {
     fetch("http://localhost:7000/api/v1/menu")
       .then((res) => res.json())
       .then((data) => {
         setRam(data.data);
-        console.log(data)
       })
       .catch((err) => {
         console.log(err);
@@ -19,27 +23,26 @@ const Navdata = () => {
   return (
     <div className="navbar">
       <div className="navoptions">
-  
         {ram.map((element, index) => (
           <div className="navoption" key={index} id='lol'>
-            <a href={`${element.link}`}>{element.name}</a>
-          
-            {element.subMenu.length > 0  && (
-  <ul className="dropdown">
-    {element.subMenu.map((subelement, index) => (
-      <a href={`${subelement.link}`} key={index}>
-        <li>{subelement.name}</li>
-      </a>
-    ))}
-  </ul>
-)}
+            <Link to={element.link} onClick={() => handleLinkClick(element.name)}>
+              {element.name}
+            </Link>
 
+            {element.subMenu.length > 0 && (
+              <ul className="dropdown">
+                {element.subMenu.map((subelement, index) => (
+                  <Link to={subelement.link} key={index}>
+                    <li>{subelement.name}</li>
+                  </Link>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
 
         <div className="navoption" id="Ecommerce">
-          <a href={`/Ecommerce`}>Ecommerce</a>
-          
+          <Link to={`/Ecommerce`}>Ecommerce</Link>
         </div>
 
         <div>
