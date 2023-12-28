@@ -25,7 +25,7 @@ console.log(ram)
       <div className="navoptions">
         {ram.map((element, index) => (
           <div className="navoption" key={index} id='lol'>
-            <Link to={element.link} onClick={() => handleLinkClick(element.name)}>
+            <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name)}>
               {element.name}
             </Link>
 

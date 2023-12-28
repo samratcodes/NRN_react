@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/content" element={<ContentForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Main />} />
-          <Route path="/about-us" element={<Subpage  fetchLinkData={fetchLinkData} />} />
+          <Route path="/Subpage" element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/meetings" element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/women-affairs"   element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/youth-affairs"   element={<Subpage  fetchLinkData={fetchLinkData} />}/>

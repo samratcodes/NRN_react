@@ -7,9 +7,6 @@ const Subpagetop = (props) => {
     <div class="main_Text">
     <div class="main_Text_top">
       <div>{props.text}</div>&nbsp; &nbsp;
-       <div class="green">
-         US
-       </div>
     </div>
     </div>
 </main>

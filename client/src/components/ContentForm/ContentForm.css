@@ -26,7 +26,7 @@ label{
     font-weight: 700;
     text-align: center;  
 }
-#ContentName,#ContentLink,#Heading,#SubHeading,#shortDescription,#LongDescription,#PageLocation{
+#ContentName,#SubMenuName,#ContentLink,#Heading,#SubHeading,#shortDescription,#LongDescription,#PageLocation{
     border-radius: 1rem;
     width: 20rem;
 }
@@ -43,8 +43,38 @@ label{
     align-items: center;
     justify-content: space-around;
 }
+.subMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  width: 100%;
+  border-top: 1px solid white;
+}
+.submenuEle{
+    border-radius: 2rem;
+    width: 20rem;
+}
+.submenuSection{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+.submenuContentSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.subMenu_title{
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
 .ContentSection{
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     border-top: 1px solid white;
@@ -74,4 +104,17 @@ flex-direction: column;
 align-items: center;
     border: white 1px solid;
 }
-
+input[type='text'] {
+     width: 20rem; 
+}
+#plusImage{
+    width: max-content;
+    height: max-content;
+}
+.imageSection{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
