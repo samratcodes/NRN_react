@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Subpagetop = () => {
+const Subpagetop = (props) => {
   return (
     <div>
             <main>
     <div class="main_Text">
     <div class="main_Text_top">
-      <div>About</div>&nbsp; &nbsp;
+      <div>{props.text}</div>&nbsp; &nbsp;
        <div class="green">
          US
        </div>

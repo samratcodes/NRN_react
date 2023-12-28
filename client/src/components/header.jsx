@@ -1,4 +1,5 @@
 import Navdata from './Navdata/Navdata';
+import  { useState } from 'react';
 import './header.css'
 
 const navbar=[{
@@ -6,9 +7,10 @@ const navbar=[{
   'options': ['objectives']
 }]
 
-const header = () => {
- 
-
+const header = ({handleLinkinAPP}) => {
+  const handleLink=(props)=>{
+    handleLinkinAPP(props)
+  }
   return (
   
         <header>
@@ -31,7 +33,7 @@ const header = () => {
             <a href="/login"><span className="button">Login</span></a>
           </div>
     
-<Navdata/>
+<Navdata onLinkClick={handleLink}/>
         </header>
       );
     };

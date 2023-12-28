@@ -8,7 +8,7 @@ const contentsController = require("./controllers/contentsController")
 
 const app = express()
 const port = process.env.PORT 
-
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
