@@ -1,9 +1,6 @@
 const mongoose = require("mongoose")
 const menuSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:[true,"Menu name should be provided"],
-    },
+    name:String,
     link:String,
     contents:[{
         heading:String,

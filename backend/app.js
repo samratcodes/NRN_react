@@ -8,34 +8,32 @@ const contentsController = require("./controllers/contentsController")
 
 const app = express()
 const port = process.env.PORT 
-app.use(cors());
+
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.use(express.static("public"))
+app.use("/uploads",express.static("uploads"))
 
+//SETTING UP MULTER FOR HANDLING FILES
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,"uploads/")
     },
     filename:(req,file,cb)=>{
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, file.fieldname + '-' + uniqueSuffix)
+        cb(null,Date.now()+"-"+file.originalname)
     }
 })
 const upload = multer({storage:storage})
 
-app.get("/",(req,res)=>{
-    res.json({name:"lionel messi"})
-})
-
 //MEMBERS API
 app.get("/api/v1/members",memberController.getMembers)
-app.post("/api/v1/members",memberController.addMember)
-app.put("/api/v1/members/:id",memberController.updateMember)
+app.post("/api/v1/members",upload.any(),memberController.addMember)
+app.put("/api/v1/members/:id",upload.any(),memberController.updateMember)
 app.delete("/api/v1/member/:id",memberController.deleteMember)
 
 //MENU API
 app.get("/api/v1/menu",menuController.getMenu)
-app.post("/api/v1/menu",menuController.addMenu)
+app.post("/api/v1/menu",upload.any(),menuController.addMenu)
 
 //ROUTES TO GET CONTENTS FOR MENUS/SUB-MENUS BASED ON LINK
 app.get("/:mainLink",contentsController.getMainMenuContents)
