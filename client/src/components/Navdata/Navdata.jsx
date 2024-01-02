@@ -6,7 +6,7 @@ const Navdata = ({ onLinkClick }) => {
   const [ram, setRam] = useState([]);
 console.log(ram)
   const handleLinkClick = (link) => {
-    onLinkClick(link);
+    onLinkClick(link,ram);
   };
 
   useEffect(() => {
@@ -28,16 +28,16 @@ console.log(ram)
             <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name)}>
               {element.name}
             </Link>
-
-            {element.subMenu.length > 0 && (
-              <ul className="dropdown">
-                {element.subMenu.map((subelement, index) => (
-                  <Link to={subelement.link} key={index}>
-                    <li>{subelement.name}</li>
-                  </Link>
-                ))}
-              </ul>
-            )}
+            {element.subMenu?.length > 0 && (
+  <ul className="dropdown">
+    {element.subMenu.map((subelement, index) => (
+      <Link to={subelement.link} key={index}>
+        <li>{subelement.name}</li>
+      </Link>
+    ))}
+  </ul>
+)}
+        
           </div>
         ))}
 

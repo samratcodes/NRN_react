@@ -13,6 +13,7 @@ import ContentForm from "./components/ContentForm/ContentForm";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
+import Update from './UpdateForm/Update';
 
 const App = () => {
   const [fetchLinkData, setFetchLinkData] = useState(null);
@@ -28,6 +29,7 @@ const App = () => {
         <Header handleLinkinAPP={FetchLink} />
         <Routes>
           <Route path="/content" element={<ContentForm />} />
+          <Route path="/Update" element={<Update/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Main />} />
           <Route path="/Subpage" element={<Subpage  fetchLinkData={fetchLinkData} />} />

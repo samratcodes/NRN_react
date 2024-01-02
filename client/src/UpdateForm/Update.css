@@ -1,0 +1,52 @@
+.Update_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.Update_form h1{
+    font-size: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    color: white;
+    background-color:rgb(69,173,214);
+}
+.updateContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    margin: 1rem;
+}
+.updateElement{
+    border: 2px solid rgb(188, 187, 187);
+    background-color: rgb(209, 209, 209);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.4rem;
+}
+.UE_nameTop,.UE_elementTop{
+    font-size: 1.5rem;
+    font-weight: 600;
+color: rgb(255, 255, 255);
+}
+.UE_name{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.updateElement i{
+    padding: 0.4rem;
+cursor: pointer;
+}
+.edit{
+    padding: 0.4rem;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}

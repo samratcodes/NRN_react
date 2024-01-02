@@ -10,7 +10,9 @@ const navbar=[{
 const header = ({handleLinkinAPP}) => {
   const handleLink=(props)=>{
     handleLinkinAPP(props)
+    console.log(props)
   }
+
   return (
   
         <header>
@@ -33,7 +35,7 @@ const header = ({handleLinkinAPP}) => {
             <a href="/login"><span className="button">Login</span></a>
           </div>
     
-<Navdata onLinkClick={handleLink}/>
+<Navdata onLinkClick={handleLink }/>
         </header>
       );
     };
