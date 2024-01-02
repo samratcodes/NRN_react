@@ -17,6 +17,7 @@ const getMenu = (req,res)=>{
 
 //ADD MENU
 const addMenu = (req,res)=>{
+    //CHECK IF THERE ARE DATA ON THE REQUEST
     if(Object.keys(req.body).length === 0){
         return res.status(400).json({success:false,message:"Invalid request body"})
     }
