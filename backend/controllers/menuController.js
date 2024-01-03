@@ -50,6 +50,9 @@ const addMenu = (req,res)=>{
     const mainContents = []
     for(let i=1;i<=maxMainContent;i++){
         const mainContent = {}
+        if(reqData[`main_contentBy${i}`]){
+            mainContent["contentBy"] = reqData[`main_contentBy${i}`]
+        }
         if(reqData[`main_heading${i}`]){
             mainContent["heading"] = reqData[`main_heading${i}`]
         }
@@ -67,7 +70,7 @@ const addMenu = (req,res)=>{
         }
         if(reqFiles.some((file)=>{return file.fieldname === `main_images${i}`})){
             const images = reqFiles.filter((file)=>{return file.fieldname ===`main_images${i}`})
-            mainContent["imagePath"] = req.files.map((file)=>{return file.path})
+            mainContent["imagePath"] = images.map((file)=>{return file.path})
         }
         if(reqData[`main_imageDescription${i}`]){
             mainContent["imageDescription"] = reqData[`main_imageDescription${i}`]
@@ -113,6 +116,9 @@ const addMenu = (req,res)=>{
         const subMenuContents = [] 
         for(let i=1;i<=maxSubMenuContents;i++){
             const subMenuContent = {}
+            if(reqData[`${subMenuInitials}_contentBy${i}`]){
+                subMenuContent['contentBy'] = reqData[`${subMenuInitials}_contentBy${i}`]
+            }
             if(reqData[`${subMenuInitials}_heading${i}`]){
                 subMenuContent["heading"] = reqData[`${subMenuInitials}_heading${i}`]
             }
@@ -148,6 +154,7 @@ const addMenu = (req,res)=>{
         res.status(201).json({success:true,message:"Menu created successfully",data:savedMenu})
     })
     .catch((err)=>{
+        console.log(err.message)
         res.status(500).json({success:false,message:"Error while saving menu to the database",error:err})
     })
 }
