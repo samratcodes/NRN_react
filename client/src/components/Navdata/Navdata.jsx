@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import './Navdata.css';
 
 const Navdata = ({ onLinkClick }) => {
-  const [ram, setRam] = useState([]);
-console.log(ram)
-  const handleLinkClick = (link) => {
-    onLinkClick(link,ram);
+  const [array, setArray] = useState([]);
+
+  const handleLinkClick = (link,element) => {
+    onLinkClick(link,element);
   };
 
   useEffect(() => {
     fetch("http://localhost:7000/api/v1/menu")
       .then((res) => res.json())
       .then((data) => {
-        setRam(data.data);
+        console.log(data.data);
+        setArray(data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -23,14 +24,14 @@ console.log(ram)
   return (
     <div className="navbar">
       <div className="navoptions">
-        {ram.map((element, index) => (
+        {array.map((element, index) => (
           <div className="navoption" key={index} id='lol'>
-            <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name)}>
+      <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name,element)}>
               {element.name}
             </Link>
-            {element.subMenu?.length > 0 && (
+            {element.subMenus.length > 0 && (
   <ul className="dropdown">
-    {element.subMenu.map((subelement, index) => (
+    {element.subMenus.map((subelement, index) => (
       <Link to={subelement.link} key={index}>
         <li>{subelement.name}</li>
       </Link>

@@ -4,11 +4,11 @@ import Subpagetop from './Subpagetop';
 
 
 const Subpage = (props) => {
-  console.log(props.fetchLinkData)
+  console.log(props.fetchLinkData,':',props.headerArray)
   return (
     <div>
-      <Subpagetop text={props.fetchLinkData}/>
-     <Objectives/>
+      <Subpagetop text={props.fetchLinkData} />
+     <Objectives elementObject={props.headerArray}/>
     </div>
   )
 }

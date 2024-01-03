@@ -6,10 +6,11 @@ import Projects from "./Projects"
 import Intro from "./intro"
 
 const Main = () => {
+
   return (
     <div>
-      <Intro/>
-<Events/>
+<Intro/>
+<Events />
 <News/>
 <Projects/>
 <Newsletter/>

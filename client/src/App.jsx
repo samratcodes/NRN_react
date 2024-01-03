@@ -10,17 +10,18 @@ import ExecutiveBoards from "./Subpage/ExecutiveBoards";
 import Advisors from "./Subpage/Advisors";
 import Login from "./components/login/Login";
 import ContentForm from "./components/ContentForm/ContentForm";
-import Header from "./components/Header";
+import Header from "./components/header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
 import Update from './UpdateForm/Update';
 
 const App = () => {
   const [fetchLinkData, setFetchLinkData] = useState(null);
+  const [headerArray, setHeaderArray] = useState([]);
 
-  const FetchLink = (data) => {
-    // Process data as needed
+  const FetchLink = (data,elementObject) => {
     setFetchLinkData(data);
+    setHeaderArray(elementObject);
   };
 
   return (
@@ -32,7 +33,7 @@ const App = () => {
           <Route path="/Update" element={<Update/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Main />} />
-          <Route path="/Subpage" element={<Subpage  fetchLinkData={fetchLinkData} />} />
+          <Route path="/Subpage" element={<Subpage  fetchLinkData={fetchLinkData} headerArray={headerArray}/>} />
           <Route path="/meetings" element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/women-affairs"   element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/youth-affairs"   element={<Subpage  fetchLinkData={fetchLinkData} />}/>
@@ -47,7 +48,7 @@ const App = () => {
           <Route path="/advisors"   element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/Ecommerce" element={<Ecommerce />} />
           <Route path="/oneProduct" element={<ProductPage />} />
-          <Route path="" element={<Main />} />
+          <Route path="" element={<Main  />} />
           <Route path="*" element={<Main />} />
         </Routes>
       </Router>

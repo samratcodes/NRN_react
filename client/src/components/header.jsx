@@ -8,9 +8,9 @@ const navbar=[{
 }]
 
 const header = ({handleLinkinAPP}) => {
-  const handleLink=(props)=>{
-    handleLinkinAPP(props)
-    console.log(props)
+  const handleLink=(props,array)=>{
+    handleLinkinAPP(props,array)
+    console.log(props,array)
   }
 
   return (

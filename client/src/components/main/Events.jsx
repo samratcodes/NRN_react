@@ -1,6 +1,7 @@
 import './Event.css'
 
 const Events = () => {
+
   return (
     <div>
       <div class="section2">
