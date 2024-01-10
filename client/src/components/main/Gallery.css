@@ -1,0 +1,29 @@
+.Gallery{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.Gallery_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.Gallery_title{
+    font-family: 'Playfair Display', Georgia, serif ;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: rgb(57, 57, 57);
+}
+.GT_image {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.GT_image img{
+   margin: 0.2rem;
+}

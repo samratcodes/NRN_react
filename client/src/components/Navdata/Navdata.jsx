@@ -4,46 +4,57 @@ import './Navdata.css';
 
 const Navdata = ({ onLinkClick }) => {
   const [array, setArray] = useState([]);
+  const [active, setActive] = useState(true);
 
-  const handleLinkClick = (link,element) => {
-    onLinkClick(link,element);
+  const handleLinkClick = (link, element) => {
+    onLinkClick(link, element, array);
   };
 
   useEffect(() => {
-    fetch("http://localhost:7000/api/v1/menu")
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:7000/api/v1/menu");
+        const data = await response.json();
         console.log(data.data);
         setArray(data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        nonClick(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  const nonClick = (array) => {
+    onLinkClick('Home',[], array);
+    setActive(false);
+  };
 
   return (
     <div className="navbar">
       <div className="navoptions">
         {array.map((element, index) => (
           <div className="navoption" key={index} id='lol'>
-      <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name,element)}>
+            <Link to={element.link === '/home' ? element.link : '/Subpage'} onClick={() => handleLinkClick(element.name, element)}>
               {element.name}
             </Link>
             {element.subMenus.length > 0 && (
-  <ul className="dropdown">
-    {element.subMenus.map((subelement, index) => (
-      <Link to={subelement.link} key={index}>
-        <li>{subelement.name}</li>
-      </Link>
-    ))}
-  </ul>
-)}
-        
+              <ul className="dropdown">
+                {element.subMenus.map((subelement, subIndex) => (
+                  <Link to={subelement.link} key={subIndex}>
+                    <li>{subelement.name}</li>
+                  </Link>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
 
         <div className="navoption" id="Ecommerce">
-          <Link to={`/Ecommerce`}>Ecommerce</Link>
+          <Link to={`/Ecommerce`} onClick={() => handleLinkClick('Ecommerce', { name: 'Ecommerce', subMenus: [] })}>
+            Ecommerce
+          </Link>
         </div>
 
         <div>

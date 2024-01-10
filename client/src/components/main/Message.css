@@ -1,0 +1,46 @@
+.Message{
+    margin-top: 3rem;
+    background-color: rgb(246,246,246);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    width: 5rem;
+    height: 2px;
+    background-color: rgb(164, 164, 164);
+}
+.MessageSection_image{
+    width: 50%;
+    background:url('https://img1.wsimg.com/isteam/ip/c37a43c9-c09c-429b-94d7-86d896a90894/blob-6a72eca.png/:/cr=t:16.22%25,l:0%25,w:67.57%25,h:67.57%25/rs=w:1023,m');
+    max-height: unset;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-position: 31.09594622122632% 88.26086956521739%;
+}
+.MeST_title{
+    font-size: 2rem;
+    color: rgb(67, 67, 67);
+}
+.MessageSection_text p{
+    font-size: 1.2rem;
+    color: rgb(113, 113, 113);
+}
+.MessageSection_text{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: rgb(113, 113, 113);
+}
+.MessageSection{
+    overflow: hidden;
+    height: 50rem;
+    padding: 1rem;
+    width: 90%;
+display: flex;
+}

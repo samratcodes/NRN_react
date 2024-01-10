@@ -27,12 +27,7 @@ const Objectives = (props) => {
 
    <div class="ogco_content">
     {ContentObject.contents[0].longDescription} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempore impedit distinctio cumque blanditiis qui magnam repellendus eius sapiente veritatis saepe, nisi soluta aliquid officia quam perspiciatis, maxime minus fugit.
-  {/* <ol>
-  <li>To function as the national Board of NRN USA and the national coordination council of its international organization NRNA ICC</li>
-  <li>To represent and promote the interest, right, privileges, and immunities of NRN in the United States and Nepal</li>
-  <li>To coordinate the National Board’s activities with the NRN USA and its State Chapters</li>
-  <li>To coordinate with other national and global not-for-profit organizations with similar interests to promote and protect NRN’s interests, rights, privileges, and immunities</li>
-</ol> */}
+
    </div>
     </div>
     </div>

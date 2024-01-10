@@ -1,0 +1,43 @@
+.Hello_section{
+    margin-top: 1rem;
+    display: flex;
+    height: 45rem;
+}
+.helloLeft{
+    width: 50%;
+    overflow: hidden;
+    background-image: url("https://img1.wsimg.com/isteam/ip/c37a43c9-c09c-429b-94d7-86d896a90894/nepal%20tamang%20association-88bbb31.jpeg/:/cr=t:0%25,l:0%25");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.helloRight{
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.HR_Title{
+    font-family: 'Playfair Display', Georgia, serif ;
+    font-size:4rem;
+    font-weight: 400;
+}
+.HR_text{
+    color: rgb(111,110,110);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+}
+.HR_bottom{
+    border-radius: 1rem;
+    color: white;
+    padding: 1.4rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color:rgb(71,67,69);
+}

@@ -1,0 +1,45 @@
+.MAT{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Mission{
+    width: 90%;
+}
+.MissionSection,.OurTeamSection{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.MS_image{
+    width: 50%;
+    overflow: hidden;
+}
+.MS_image img{
+    width:40vw;
+    object-fit: contain;
+    height: auto;
+}
+.MS_text{
+    padding:0rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    overflow: hidden; 
+}
+.MST_title{
+    font-size: 3rem;
+    color: rgb(41, 41, 41);
+font-family: 'Playfair Display', Georgia, serif ;
+}
+.MST_Description{
+    text-align: center;
+    color:rgb(70,67,68) ;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.5;
+}

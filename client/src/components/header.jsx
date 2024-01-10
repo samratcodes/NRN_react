@@ -8,9 +8,8 @@ const navbar=[{
 }]
 
 const header = ({handleLinkinAPP}) => {
-  const handleLink=(props,array)=>{
-    handleLinkinAPP(props,array)
-    console.log(props,array)
+  const handleLink=(props,element,array)=>{
+    handleLinkinAPP(props,element,array)
   }
 
   return (

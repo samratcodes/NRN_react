@@ -1,0 +1,26 @@
+.Connect{
+    margin-top: 1rem;
+    display: flex;
+    justify-content:center;
+}
+.Connect_title{
+    font-family: 'Playfair Display', Georgia, serif ;
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgb(57, 57, 57);
+}
+.ConnectSection{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height:12rem;
+}
+.ConnectSection i{
+    font-size: 2.5rem;
+    color:rgb(24,118,243);
+    padding: 0px;
+    background-color: white;
+}

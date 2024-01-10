@@ -18,10 +18,11 @@ import Update from './UpdateForm/Update';
 const App = () => {
   const [fetchLinkData, setFetchLinkData] = useState(null);
   const [headerArray, setHeaderArray] = useState([]);
-
-  const FetchLink = (data,elementObject) => {
+  const [HomeData, setHomeData]= useState({});
+  const FetchLink = (data,elementObject,array) => {
     setFetchLinkData(data);
     setHeaderArray(elementObject);
+    setHomeData(array);
   };
 
   return (
@@ -32,7 +33,7 @@ const App = () => {
           <Route path="/content" element={<ContentForm />} />
           <Route path="/Update" element={<Update/>} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Main />} />
+          <Route path="/home" element={<Main   HomeData={HomeData}/>} />
           <Route path="/Subpage" element={<Subpage  fetchLinkData={fetchLinkData} headerArray={headerArray}/>} />
           <Route path="/meetings" element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/women-affairs"   element={<Subpage  fetchLinkData={fetchLinkData} />} />
@@ -48,8 +49,8 @@ const App = () => {
           <Route path="/advisors"   element={<Subpage  fetchLinkData={fetchLinkData} />} />
           <Route path="/Ecommerce" element={<Ecommerce />} />
           <Route path="/oneProduct" element={<ProductPage />} />
-          <Route path="" element={<Main  />} />
-          <Route path="*" element={<Main />} />
+          <Route path="" element={<Main HomeData={HomeData}/>} />
+          <Route path="*" element={<Main  HomeData={HomeData} />} />
         </Routes>
       </Router>
       <Footer />
