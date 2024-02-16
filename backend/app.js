@@ -25,7 +25,7 @@ app.use((req,res)=>{
     res.status(404).send("This is 404 Error.")
 })
 
-//MAKING CONNECTIONS WITH DATABASE
+/* //MAKING CONNECTIONS WITH DATABASE
 const connectionString = `mongodb+srv://nrnDb:${process.env.DB_PASSWORD}@cluster0.ou1m2s6.mongodb.net/?retryWrites=true&w=majority`
 mongoose.connect(connectionString)
 .then(()=>{
@@ -36,5 +36,8 @@ mongoose.connect(connectionString)
 })
 .catch((err)=>{
     console.log("err")
-})
+}) */
 
+app.listen(port,()=>{
+    console.log("Server started on port : ",port)
+})
