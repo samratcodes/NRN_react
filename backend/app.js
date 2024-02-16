@@ -1,11 +1,10 @@
 require("dotenv").config()
 const express = require("express")
-const multer = require("multer")
 const mongoose = require("mongoose")
+const memberRoutes = require("./routes/memberRoutes")
+const menuRoutes = require("./routes/menuRoutes")
+const contentRoutes = require("./routes/contentRoutes")
 const cors = require("cors")
-const memberController = require("./controllers/memberController")
-const menuController = require("./controllers/menuController")
-const contentsController = require("./controllers/contentsController")
 
 const app = express()
 const port = process.env.PORT 
@@ -16,30 +15,10 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use("/uploads",express.static("uploads"))
 
-//SETTING UP MULTER FOR HANDLING FILES
-const storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,"uploads/")
-    },
-    filename:(req,file,cb)=>{
-        cb(null,Date.now()+"-"+file.originalname)
-    }
-})
-const upload = multer({storage:storage})
-
-//MEMBERS API
-app.get("/api/v1/members",memberController.getMembers)
-app.post("/api/v1/members",upload.any(),memberController.addMember)
-app.put("/api/v1/members/:id",upload.any(),memberController.updateMember)
-app.delete("/api/v1/member/:id",memberController.deleteMember)
-
-//MENU API
-app.get("/api/v1/menu",menuController.getMenu)
-app.post("/api/v1/menu",upload.any(),menuController.addMenu)
-
-//ROUTES TO GET CONTENTS FOR MENUS/SUB-MENUS BASED ON LINK
-app.get("/:mainLink",contentsController.getMainMenuContents)
-app.get("/:mainLink/:subLink",contentsController.getSubMenuContents)
+//ROUTES
+app.use("api/v1/member",memberRoutes)
+app.use("/api/v1/menu",menuRoutes)
+app.use(contentRoutes)
 
 //HANDLE 404 REQUEST
 app.use((req,res)=>{

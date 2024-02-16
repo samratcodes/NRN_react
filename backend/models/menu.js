@@ -1,13 +1,9 @@
 const mongoose = require("mongoose")
+
 const menuSchema = new mongoose.Schema({
     name:String,
     link:String,
     contents:[{
-        addedOn:{
-            type:Date,
-            default:Date.now
-        },
-        contentBy:String,
         heading:String,
         subHeading:String,
         shortDescription:String,
@@ -20,11 +16,6 @@ const menuSchema = new mongoose.Schema({
         name:String,
         link:String,
         contents:[{
-            addedOn:{
-                type:Date,
-                default:Date.now
-            },
-            contentBy:String,
             heading:String,
             subHeading:String,
             shortDescription:String,
@@ -34,7 +25,7 @@ const menuSchema = new mongoose.Schema({
             imageDescription:Array
         }]
     }]
-})
+},{timestamps:true})
 
 const Menu = mongoose.model("Menu",menuSchema)
 
